@@ -6,6 +6,10 @@
     </head>
     <body>
         <h1>Test yourself!</h1>
-    </body>
-    <script src="index.js"></script>
+        <section id="question"></section>
+        <section id="answer"></section>
+        <button id="showAnswer" name="showAnswer" type="default" onclick="showAnswer(); this.addEventListener('click', clickStopper, false)">Show answer</button>
+        <button id="nextQuestion" type="default" onclick="nextQuestion()">Next question</button>
+    <script src="index.js"></script>    
+    </body>  
 </html>
