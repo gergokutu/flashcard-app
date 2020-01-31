@@ -35,5 +35,7 @@ function showQuestion() {
 showQuestion()
 
 function showAnswer() {
-    console.log("showAnswer fired by the button")
+    flashCard.map((item) => {
+        if (item.question === question.innerText) console.log(item.answer)
+    })
 }
