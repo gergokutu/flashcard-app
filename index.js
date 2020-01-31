@@ -10,12 +10,12 @@ const flashCard = [
     {
         question: 'What does HTML stand for?',
         answer: 'HyperText Markup Language'
-    }
+    },
+    {
+        question: 'What does JS stand for?',
+        answer: 'Javascript'
+    },
 ]
-
-// get random item from array
-// let randomNumber = Math.floor(Math.random() * ((flashCard.length - 1) + 1))
-// let randomCard = flashCard[randomNumber]
 
 const questionArray = []
 const answerArray = []
@@ -27,7 +27,8 @@ function showQuestion() {
     document.getElementById('question').innerHTML = null
     document.getElementById('answer').innerHTML = null
 
-    const randomNumber = Math.floor(Math.random() * ((flashCard.length - 1) + 1))
+    const randomNumber = Math.floor(Math.random() * flashCard.length)
+    console.log("randomNumber", randomNumber)
     const randomCard = flashCard[randomNumber]
     const randomQuestion = randomCard.question
     const question = document.createElement('p')
@@ -51,16 +52,3 @@ function showAnswer() {
         }
     }
 }
-
-// function showAnswer() {
-//     const randomAnswer = randomCard.answer
-//     answerArray.push(randomAnswer)
-//     // prevent the click button to show the answer multiple times
-//     document.getElementById('answer').innerHTML = null
-
-//     const answer = document.createElement('p')
-//     answer.innerHTML = randomAnswer
-
-//     const sectionAnswer = document.getElementById('answer')
-//     sectionAnswer.appendChild(answer)
-// }
