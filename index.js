@@ -28,14 +28,24 @@ function showQuestion() {
     const question = document.createElement('p')
     question.innerHTML = randomQuestion
 
-    const sectionQuestion = document.getElementById('question')
-    sectionQuestion.appendChild(question)
+    const questionSection = document.getElementById('question')
+    questionSection.appendChild(question)
 }
 
 showQuestion()
 
 function showAnswer() {
+    const answerSection = document.getElementById("answer")
+    const answer = document.createElement("p")
+
     flashCard.map((item) => {
-        if (item.question === question.innerText) console.log(item.answer)
+        if (item.question === question.innerText) answer.innerHTML = item.answer
     })
+
+    answerSection.appendChild(answer)
+
+    // previous looks nicer on the screen > spacing of the additional <p>
+    // flashCard.map((item) => {
+    //     if (item.question === question.innerText) answerSection.innerText = item.answer
+    // })
 }
