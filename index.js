@@ -33,3 +33,7 @@ function showQuestion() {
 }
 
 showQuestion()
+
+function showAnswer() {
+    console.log("showAnswer fired by the button")
+}
