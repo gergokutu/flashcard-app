@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>FlashCard App</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Test yourself!</h1>
-        <section id="question"></section>
-        <section id="answer"></section>
-        <button id="showAnswer" type="default" onclick="showAnswer()">Show answer</button>
-        <button id="nextQuestion" type="default" onclick="showQuestion()">Next question</button>
-    <script src="index.js"></script>    
-    </body>  
+
+<head>
+    <title>FlashCard App</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <h1>Test yourself!</h1>
+    <section id="question"></section>
+    <section id="answer"></section>
+    <button id="showAnswer" type="default" onclick="showAnswer()">Show answer</button>
+    <button id="nextQuestion" type="default" onclick="showQuestion()">Next question</button>
+    <div>
+        <h2>Create you own flashcard!</h2>
+        <form>
+            Question: <input id="newQuestion" type="text" name="question">
+            Answer: <input id="newAnswer" type="text" name="answer">
+        </form>
+        <button id="addOwnCard" type="default" onclick="addOwnCard()">Create Q&A</button>
+        <p id="feedback"></p>
+    </div>
+</body>
+
 </html>

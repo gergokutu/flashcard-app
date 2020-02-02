@@ -43,9 +43,16 @@ function showAnswer() {
     })
 
     answerSection.appendChild(answer)
+}
 
-    // previous looks nicer on the screen > spacing of the additional <p>
-    // flashCard.map((item) => {
-    //     if (item.question === question.innerText) answerSection.innerText = item.answer
-    // })
+function addOwnCard() {
+    flashCard.push(
+        { 
+            question: newQuestion.value,
+            answer: newAnswer.value
+        })
+        
+    const feedback = document.getElementById("feedback")
+    feedback.innerText = "Q&A created"
+    setTimeout(() => feedback.innerText = "", 4000)
 }
