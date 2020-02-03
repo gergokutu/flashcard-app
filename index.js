@@ -72,22 +72,26 @@ function showAnswer() {
 }
 
 function addOwnCard() {
+    const category = categorySelect()
+    console.log(category)
     flashCards[category].push(
         {   
             id: flashCards[category].length,
             question: newQuestion.value,
             answer: newAnswer.value
-        })
+        }
+    )
         
     const feedback = document.getElementById("feedback")
     feedback.innerText = "Q&A created"
     setTimeout(() => feedback.innerText = "", 4000)
 
     // advanced console methods
-    // console.log(`%cflashCards: ${flashCards}`, 'color: blue;')
-    // I want the next result
-    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[category][flashCards[category].length - 1])
-    console.table(flashCards)
+    console.log(
+        '%cNewly created flashCard:', 'color: blue; font-size: small;',
+        flashCards[category][flashCards[category].length - 1]
+    )
+    console.table(flashCards[category])
 }
 
 showQuestion()
@@ -111,7 +115,7 @@ showQuestion()
 // console.dir(myObject)
 
 // // console.table
-// console.table(flashCards)
+// console.table(flashCards.coding)
 // console.table(myObject)
 
 // // console.group, ...End(), ...Collapsed
