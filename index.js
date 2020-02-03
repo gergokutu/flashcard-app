@@ -1,17 +1,21 @@
-const flashCard = [
-    {
+const flashCards = [
+    {   
+        id: 0,
         question: 'What is an array?',
         answer: 'Composite data type'
     },
-    {
+    {   
+        id: 1,
         question: 'What does CSS stand for?',
         answer: 'Cascading Style Sheet'
     },
-    {
+    {   
+        id: 2,
         question: 'What does HTML stand for?',
         answer: 'HyperText Markup Language'
     },
-    {
+    {   
+        id: 3,
         question: 'What does JS stand for?',
         answer: 'Javascript'
     }
@@ -22,8 +26,8 @@ function showQuestion() {
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
 
-    const randomNumber = Math.floor(Math.random() * flashCard.length)
-    const randomCard = flashCard[randomNumber]
+    const randomNumber = Math.floor(Math.random() * flashCards.length)
+    const randomCard = flashCards[randomNumber]
     const randomQuestion = randomCard.question
 
     const questionSection = document.getElementById('question')
@@ -34,8 +38,8 @@ showQuestion()
 
 function showAnswer() {
     const answerSection = document.getElementById("answer")
-    
-    flashCard.map((item) => {
+
+    flashCards.map((item) => {
         if (item.question === question.innerText) answerSection.innerText = item.answer
         // advanced console methods > count
         // console.count('Console.count')
@@ -43,8 +47,9 @@ function showAnswer() {
 }
 
 function addOwnCard() {
-    flashCard.push(
-        { 
+    flashCards.push(
+        {   
+            id: flashCards.length,
             question: newQuestion.value,
             answer: newAnswer.value
         })
@@ -54,9 +59,9 @@ function addOwnCard() {
     setTimeout(() => feedback.innerText = "", 4000)
 
     // advanced console methods
-    // console.log(`%cflashCard: ${flashCard}`, 'color: blue;')
+    // console.log(`%cflashCards: ${flashCards}`, 'color: blue;')
     // I want the next result
-    // console.log('%cflashCards:', 'color: blue; font-size: medium;', flashCard)
+    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[flashCards.length - 1])
 }
 
 // // advanced console methods > color, font-size
@@ -78,7 +83,7 @@ function addOwnCard() {
 // console.dir(myObject)
 
 // // console.table
-// console.table(flashCard)
+// console.table(flashCards)
 // console.table(myObject)
 
 // // console.group, ...End(), ...Collapsed
