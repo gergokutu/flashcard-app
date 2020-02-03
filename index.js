@@ -1,6 +1,6 @@
-const flashCards = [
-    {
-        coding: [
+const flashCards = {
+        coding: 
+        [
             {   
                 id: 0,
                 question: 'What is an array?',
@@ -21,10 +21,9 @@ const flashCards = [
                 question: 'What does JS stand for?',
                 answer: 'Javascript'
             }
-        ]
-    },
-    {
-        diving: [
+        ],
+        diving: 
+        [
             {   
                 id: 0,
                 question: 'What is a BCD?',
@@ -36,16 +35,19 @@ const flashCards = [
                 answer: 'Frog kick'
             }
         ]
-    }
-]
+    
+}
+// chosen category
+const category = 'coding'
+console.log(flashCards)
 
 function showQuestion() {
     // empty the question and the answer
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
 
-    const randomNumber = Math.floor(Math.random() * flashCards.length)
-    const randomCard = flashCards[randomNumber]
+    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
+    const randomCard = flashCards[category][randomNumber]
     const randomQuestion = randomCard.question
 
     const questionSection = document.getElementById('question')
@@ -57,7 +59,7 @@ showQuestion()
 function showAnswer() {
     const answerSection = document.getElementById("answer")
 
-    flashCards.map((item) => {
+    flashCards[category].map((item) => {
         if (item.question === question.innerText) answerSection.innerText = item.answer
         // advanced console methods > count
         // console.count('Console.count')
@@ -65,9 +67,9 @@ function showAnswer() {
 }
 
 function addOwnCard() {
-    flashCards.push(
+    flashCards[category].push(
         {   
-            id: flashCards.length,
+            id: flashCards[category].length,
             question: newQuestion.value,
             answer: newAnswer.value
         })
@@ -79,7 +81,7 @@ function addOwnCard() {
     // advanced console methods
     // console.log(`%cflashCards: ${flashCards}`, 'color: blue;')
     // I want the next result
-    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[flashCards.length - 1])
+    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[category][flashCards[category].length - 1])
     console.table(flashCards)
 }
 
