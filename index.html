@@ -10,11 +10,19 @@
 
 <body>
     <h1>Test yourself!</h1>
-    <section id="question"></section>
-    <section id="answer"></section>
-    <button id="showAnswer" type="default" onclick="showAnswer()">Show answer</button>
-    <button id="nextQuestion" type="default" onclick="showQuestion()">Next question</button>
-    <div>
+    <form id="categorySelect" onclick="showQuestion()">
+        <input type="radio" name="category" value="coding" checked> coding
+        <input type="radio" name="category" value="diving"> diving
+    </form>
+
+    <div id="flashCards">
+        <section id="question"></section>
+        <section id="answer"></section>
+        <button id="showAnswer" type="default" onclick="showAnswer()">Show answer</button>
+        <button id="nextQuestion" type="default" onclick="showQuestion()">Next question</button>
+    </div>
+
+    <div id="creation">
         <h2>Create you own flashcard!</h2>
         <form>
             Question: <input id="newQuestion" type="text" name="question">

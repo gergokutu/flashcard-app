@@ -1,45 +1,70 @@
-const flashCards = [
-    {   
-        id: 0,
-        question: 'What is an array?',
-        answer: 'Composite data type'
-    },
-    {   
-        id: 1,
-        question: 'What does CSS stand for?',
-        answer: 'Cascading Style Sheet'
-    },
-    {   
-        id: 2,
-        question: 'What does HTML stand for?',
-        answer: 'HyperText Markup Language'
-    },
-    {   
-        id: 3,
-        question: 'What does JS stand for?',
-        answer: 'Javascript'
+const flashCards = {
+        coding: 
+        [
+            {   
+                id: 0,
+                question: 'What is an array?',
+                answer: 'Composite data type'
+            },
+            {   
+                id: 1,
+                question: 'What does CSS stand for?',
+                answer: 'Cascading Style Sheet'
+            },
+            {   
+                id: 2,
+                question: 'What does HTML stand for?',
+                answer: 'HyperText Markup Language'
+            },
+            {   
+                id: 3,
+                question: 'What does JS stand for?',
+                answer: 'Javascript'
+            }
+        ],
+        diving: 
+        [
+            {   
+                id: 0,
+                question: 'What is a BCD?',
+                answer: 'Bouyancy Control Device'
+            },
+            {   
+                id: 1,
+                question: 'What kind of kick do you know?',
+                answer: 'Frog kick'
+            }
+        ]
+    
+}
+
+// choose category
+function categorySelect() {
+    const categories = document.getElementById('categorySelect').children
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].checked) return categories[i].value
     }
-]
+}
 
 function showQuestion() {
+    const category = categorySelect()
     // empty the question and the answer
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
 
-    const randomNumber = Math.floor(Math.random() * flashCards.length)
-    const randomCard = flashCards[randomNumber]
+    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
+    const randomCard = flashCards[category][randomNumber]
     const randomQuestion = randomCard.question
 
     const questionSection = document.getElementById('question')
     questionSection.innerText = randomQuestion
 }
 
-showQuestion()
-
 function showAnswer() {
+    const category = categorySelect()
     const answerSection = document.getElementById("answer")
 
-    flashCards.map((item) => {
+    flashCards[category].map((item) => {
         if (item.question === question.innerText) answerSection.innerText = item.answer
         // advanced console methods > count
         // console.count('Console.count')
@@ -47,9 +72,9 @@ function showAnswer() {
 }
 
 function addOwnCard() {
-    flashCards.push(
+    flashCards[category].push(
         {   
-            id: flashCards.length,
+            id: flashCards[category].length,
             question: newQuestion.value,
             answer: newAnswer.value
         })
@@ -61,8 +86,11 @@ function addOwnCard() {
     // advanced console methods
     // console.log(`%cflashCards: ${flashCards}`, 'color: blue;')
     // I want the next result
-    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[flashCards.length - 1])
+    console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[category][flashCards[category].length - 1])
+    console.table(flashCards)
 }
+
+showQuestion()
 
 // // advanced console methods > color, font-size
 // console.log('%cConsole.log message with x-large orange letters', 'color: orange; font-size: x-large;')
