@@ -1,23 +1,41 @@
 const flashCards = [
-    {   
-        id: 0,
-        question: 'What is an array?',
-        answer: 'Composite data type'
+    {
+        coding: [
+            {   
+                id: 0,
+                question: 'What is an array?',
+                answer: 'Composite data type'
+            },
+            {   
+                id: 1,
+                question: 'What does CSS stand for?',
+                answer: 'Cascading Style Sheet'
+            },
+            {   
+                id: 2,
+                question: 'What does HTML stand for?',
+                answer: 'HyperText Markup Language'
+            },
+            {   
+                id: 3,
+                question: 'What does JS stand for?',
+                answer: 'Javascript'
+            }
+        ]
     },
-    {   
-        id: 1,
-        question: 'What does CSS stand for?',
-        answer: 'Cascading Style Sheet'
-    },
-    {   
-        id: 2,
-        question: 'What does HTML stand for?',
-        answer: 'HyperText Markup Language'
-    },
-    {   
-        id: 3,
-        question: 'What does JS stand for?',
-        answer: 'Javascript'
+    {
+        diving: [
+            {   
+                id: 0,
+                question: 'What is a BCD?',
+                answer: 'Bouyancy Control Device'
+            },
+            {   
+                id: 1,
+                question: 'What kind of kick do you know?',
+                answer: 'Frog kick'
+            }
+        ]
     }
 ]
 
