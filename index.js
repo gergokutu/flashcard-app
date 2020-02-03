@@ -37,11 +37,25 @@ const flashCards = {
         ]
     
 }
-// chosen category
-const category = 'coding'
-console.log(flashCards)
+// choose category
+function categorySelect() {
+    const categories = document.getElementById('categorySelect').children
+    console.log(categories)
+    // categories.map(category => {
+    //     if (category.checked) return category.value
+    // })
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].checked) return categories[i].value
+        console.log('worked')
+    }
+}
+
+
 
 function showQuestion() {
+    const category = categorySelect()
+    console.log(category)
+    categorySelect()
     // empty the question and the answer
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
