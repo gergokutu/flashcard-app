@@ -62,6 +62,7 @@ function addOwnCard() {
     // console.log(`%cflashCards: ${flashCards}`, 'color: blue;')
     // I want the next result
     console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[flashCards.length - 1])
+    console.table(flashCards)
 }
 
 // // advanced console methods > color, font-size
