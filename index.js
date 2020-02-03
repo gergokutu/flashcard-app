@@ -37,25 +37,17 @@ const flashCards = {
         ]
     
 }
+
 // choose category
 function categorySelect() {
     const categories = document.getElementById('categorySelect').children
-    console.log(categories)
-    // categories.map(category => {
-    //     if (category.checked) return category.value
-    // })
     for (let i = 0; i < categories.length; i++) {
         if (categories[i].checked) return categories[i].value
-        console.log('worked')
     }
 }
 
-
-
 function showQuestion() {
     const category = categorySelect()
-    console.log(category)
-    categorySelect()
     // empty the question and the answer
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
@@ -68,9 +60,8 @@ function showQuestion() {
     questionSection.innerText = randomQuestion
 }
 
-showQuestion()
-
 function showAnswer() {
+    const category = categorySelect()
     const answerSection = document.getElementById("answer")
 
     flashCards[category].map((item) => {
@@ -98,6 +89,8 @@ function addOwnCard() {
     console.log('%cNewly created flashCard:', 'color: blue; font-size: small;', flashCards[category][flashCards[category].length - 1])
     console.table(flashCards)
 }
+
+showQuestion()
 
 // // advanced console methods > color, font-size
 // console.log('%cConsole.log message with x-large orange letters', 'color: orange; font-size: x-large;')
