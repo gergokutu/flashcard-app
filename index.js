@@ -97,7 +97,14 @@ function addOwnCard() {
 function addCategory() {
     const newCategory = document.getElementById('newCategory').value
     
-    flashCards[newCategory] = []
+    flashCards[newCategory] = new Array()
+    flashCards[newCategory].push(
+        {   
+            id: flashCards[newCategory].length,
+            question: 'How to start your new category?',
+            answer: 'Add a new question and answer with the form below!'
+        }
+    )
     console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
 
     const categorySelect = document.getElementById('categorySelect')
@@ -106,12 +113,14 @@ function addCategory() {
     radioButton.type = 'radio'
     radioButton.name = 'category'
     radioButton.value = newCategory
+    radioButton.checked = 'checked'
     // append the radio button to the form
     categorySelect.appendChild(radioButton)
     // write the name of the radio button on the screen
     const textNode = document.createTextNode(newCategory)
     categorySelect.appendChild(textNode)
-    console.log(categorySelect.childNodes)
+
+    showQuestion()
 
     const feedback = document.getElementById("feedbackCat")
     feedback.innerText = "New category created"
