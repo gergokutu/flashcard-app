@@ -46,7 +46,7 @@ function categorySelect() {
 
 function showQuestion() {
     const category = categorySelect()
-    
+
     document.getElementById('question').innerText = null
     document.getElementById('answer').innerText = null
 
@@ -64,7 +64,7 @@ function showAnswer() {
 
     flashCards[category].map((item) => {
         if (item.question === question.innerText) answerSection.innerText = item.answer
-        
+
     })
 }
 
@@ -95,12 +95,43 @@ function addOwnCard() {
     console.table(flashCards[category])
 }
 
+function createCategory(newCategory) {
+    // create new category by user input
+    flashCards[newCategory] = []
+    // push a default question
+    flashCards[newCategory].push(
+        {
+            id: flashCards[newCategory].length,
+            question: 'How to start your new category?',
+            answer: 'Add a new question and answer with the form below!'
+        }
+    )
+    console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
+
+    // create the new radio button
+    const radioButton = document.createElement('input')
+    radioButton.type = 'radio'
+    radioButton.name = 'category'
+    radioButton.value = newCategory
+    radioButton.checked = 'checked'
+
+    // append the radio button to the form
+    const select = document.getElementById('categorySelect')
+    select.appendChild(radioButton)
+    
+    // write the name of the radio button on the screen
+    const textNode = document.createTextNode(newCategory)
+    select.appendChild(textNode)
+
+    showQuestion()
+}
+
 function addCategory() {
     const feedback = document.getElementById("feedbackCat")
     let newCategory = document.getElementById('newCategory').value
-    let isExist = false
 
     // check if the category exists?
+    let isExist = false    
     for (const category in flashCards) {
         if (category === newCategory) {
             isExist = true
@@ -109,32 +140,11 @@ function addCategory() {
     }
 
     // if not > create it
-    if (!isExist) {
-        flashCards[newCategory] = []
-        flashCards[newCategory].push(
-            {
-                id: flashCards[newCategory].length,
-                question: 'How to start your new category?',
-                answer: 'Add a new question and answer with the form below!'
-            }
-        )
-        console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
-
-        const select = document.getElementById('categorySelect')
-        // create the new radio button
-        const radioButton = document.createElement('input')
-        radioButton.type = 'radio'
-        radioButton.name = 'category'
-        radioButton.value = newCategory
-        radioButton.checked = 'checked'
-        // append the radio button to the form
-        select.appendChild(radioButton)
-        // write the name of the radio button on the screen
-        const textNode = document.createTextNode(newCategory)
-        select.appendChild(textNode)
-
-        showQuestion()
-        showFeedback(feedback, "New category created")
+    if (!isExist && newCategory !== '') {
+        createCategory(newCategory)
+        showFeedback(feedback, "New category added")
+    } else if (newCategory === '') {
+        showFeedback(feedback, "Ensure a category name!")
     } else {
         showFeedback(feedback, "Category already exists")
     }
