@@ -37,8 +37,10 @@ const flashCards = {
         ]
 }
 
+// returns the value of the checked radio button
 function categorySelect() {
     const categories = document.getElementById('categorySelect').children
+    
     for (let i = 0; i < categories.length; i++) {
         if (categories[i].checked) return categories[i].value
     }
@@ -47,13 +49,15 @@ function categorySelect() {
 function showQuestion() {
     const category = categorySelect()
 
-    document.getElementById('question').innerText = null
+    // empty the answer
     document.getElementById('answer').innerText = null
 
+    // select a random question
     const randomNumber = Math.floor(Math.random() * flashCards[category].length)
     const randomCard = flashCards[category][randomNumber]
     const randomQuestion = randomCard.question
 
+    // random question to the screen
     const questionSection = document.getElementById('question')
     questionSection.innerText = randomQuestion
 }
@@ -64,7 +68,6 @@ function showAnswer() {
 
     flashCards[category].map((item) => {
         if (item.question === question.innerText) answerSection.innerText = item.answer
-
     })
 }
 
@@ -75,29 +78,28 @@ function showFeedback(feedback, message) {
 
 function addOwnCard() {
     const category = categorySelect()
-
-    flashCards[category].push(
-        {
-            id: flashCards[category].length,
-            question: newQuestion.value,
-            answer: newAnswer.value
-        }
-    )
-
     const feedback = document.getElementById("feedbackQ&A")
-    feedback.innerText = "Q&A created"
-    setTimeout(() => feedback.innerText = "", 4000)
 
-    console.log(
-        '%cNewly created flashCard:', 'color: blue; font-size: small;',
-        flashCards[category][flashCards[category].length - 1]
-    )
-    console.table(flashCards[category])
+    if (newAnswer.value === '' || newQuestion.value === '') {
+        showFeedback(feedback, "Empty answer and/or question field")
+    } else {
+        flashCards[category].push(
+            {
+                id: flashCards[category].length,
+                question: newQuestion.value,
+                answer: newAnswer.value
+            }
+        )
+
+        console.table(flashCards[category])
+        showFeedback(feedback, "Q&A created")
+    }    
 }
 
 function createCategory(newCategory) {
     // create new category by user input
     flashCards[newCategory] = []
+
     // push a default question
     flashCards[newCategory].push(
         {
@@ -106,7 +108,6 @@ function createCategory(newCategory) {
             answer: 'Add a new question and answer with the form below!'
         }
     )
-    console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
 
     // create the new radio button
     const radioButton = document.createElement('input')
@@ -118,7 +119,7 @@ function createCategory(newCategory) {
     // append the radio button to the form
     const select = document.getElementById('categorySelect')
     select.appendChild(radioButton)
-    
+
     // write the name of the radio button on the screen
     const textNode = document.createTextNode(newCategory)
     select.appendChild(textNode)
