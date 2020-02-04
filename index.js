@@ -1,41 +1,41 @@
 const flashCards = {
-        coding: 
+    coding:
         [
-            {   
+            {
                 id: 0,
                 question: 'What is an array?',
                 answer: 'Composite data type'
             },
-            {   
+            {
                 id: 1,
                 question: 'What does CSS stand for?',
                 answer: 'Cascading Style Sheet'
             },
-            {   
+            {
                 id: 2,
                 question: 'What does HTML stand for?',
                 answer: 'HyperText Markup Language'
             },
-            {   
+            {
                 id: 3,
                 question: 'What does JS stand for?',
                 answer: 'Javascript'
             }
         ],
-        diving: 
+    diving:
         [
-            {   
+            {
                 id: 0,
                 question: 'What is a BCD?',
                 answer: 'Bouyancy Control Device'
             },
-            {   
+            {
                 id: 1,
                 question: 'What kind of kick do you know?',
                 answer: 'Frog kick'
             }
         ]
-    
+
 }
 
 // choose category
@@ -71,17 +71,22 @@ function showAnswer() {
     })
 }
 
+function showFeedback(feedback, message) {
+    feedback.innerText = message
+    setTimeout(() => feedback.innerText = "", 4000)
+}
+
 function addOwnCard() {
     const category = categorySelect()
     console.log(category)
     flashCards[category].push(
-        {   
+        {
             id: flashCards[category].length,
             question: newQuestion.value,
             answer: newAnswer.value
         }
     )
-        
+
     const feedback = document.getElementById("feedbackQ&A")
     feedback.innerText = "Q&A created"
     setTimeout(() => feedback.innerText = "", 4000)
@@ -95,36 +100,49 @@ function addOwnCard() {
 }
 
 function addCategory() {
-    const newCategory = document.getElementById('newCategory').value
-    
-    flashCards[newCategory] = new Array()
-    flashCards[newCategory].push(
-        {   
-            id: flashCards[newCategory].length,
-            question: 'How to start your new category?',
-            answer: 'Add a new question and answer with the form below!'
-        }
-    )
-    console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
-
-    const categorySelect = document.getElementById('categorySelect')
-    // create the new radio button
-    const radioButton = document.createElement('input')
-    radioButton.type = 'radio'
-    radioButton.name = 'category'
-    radioButton.value = newCategory
-    radioButton.checked = 'checked'
-    // append the radio button to the form
-    categorySelect.appendChild(radioButton)
-    // write the name of the radio button on the screen
-    const textNode = document.createTextNode(newCategory)
-    categorySelect.appendChild(textNode)
-
-    showQuestion()
-
     const feedback = document.getElementById("feedbackCat")
-    feedback.innerText = "New category created"
-    setTimeout(() => feedback.innerText = "", 4000)
+    let newCategory = document.getElementById('newCategory').value
+    let isExist = false
+
+    // check if the category exists?
+    for (const category in flashCards) {
+        if (category === newCategory) {
+            isExist = true
+            break
+        }
+    }
+
+    // if not > create it
+    if (!isExist) {
+        flashCards[newCategory] = new Array()
+        flashCards[newCategory].push(
+            {
+                id: flashCards[newCategory].length,
+                question: 'How to start your new category?',
+                answer: 'Add a new question and answer with the form below!'
+            }
+        )
+        console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
+
+        const select = document.getElementById('categorySelect')
+        // create the new radio button
+        const radioButton = document.createElement('input')
+        radioButton.type = 'radio'
+        radioButton.name = 'category'
+        radioButton.value = newCategory
+        radioButton.checked = 'checked'
+        // append the radio button to the form
+        select.appendChild(radioButton)
+        // write the name of the radio button on the screen
+        const textNode = document.createTextNode(newCategory)
+        select.appendChild(textNode)
+
+        showQuestion()
+
+        showFeedback(feedback, "New category created")
+    } else {
+        showFeedback(feedback, "Category already exists")
+    }
 }
 
 showQuestion()
