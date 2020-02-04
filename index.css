@@ -1,5 +1,20 @@
-.addButton {
-  margin: 10px;
+section {
+  margin: 1em 0.5em 0.5em 0em;
+}
+
+#question {
+  font-size: 2em;
+  color: blue;
+}
+
+#answer {
+  font-size: 1.5em;
+  color: green;
+  margin: 1em 0.5em 0.5em 1em;
+}
+
+.button {
+  margin: 1em;
   font-weight: bold;
 }
 
