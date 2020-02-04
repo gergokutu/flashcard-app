@@ -94,6 +94,15 @@ function addOwnCard() {
     console.table(flashCards[category])
 }
 
+function addCategory() {
+    const newCategory = document.getElementById('newCategory').value
+    console.log(newCategory)
+        
+    const feedback = document.getElementById("feedbackCat")
+    feedback.innerText = "New category created"
+    setTimeout(() => feedback.innerText = "", 4000)
+}
+
 showQuestion()
 
 // // advanced console methods > color, font-size
