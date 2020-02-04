@@ -97,7 +97,10 @@ function addOwnCard() {
 function addCategory() {
     const newCategory = document.getElementById('newCategory').value
     console.log(newCategory)
-        
+    
+    flashCards[newCategory] = []
+    console.log('%cflashCards:', 'color: tomato; font-size: medium;', flashCards)
+
     const feedback = document.getElementById("feedbackCat")
     feedback.innerText = "New category created"
     setTimeout(() => feedback.innerText = "", 4000)
