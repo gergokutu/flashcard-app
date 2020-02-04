@@ -82,7 +82,7 @@ function addOwnCard() {
         }
     )
         
-    const feedback = document.getElementById("feedback")
+    const feedback = document.getElementById("feedbackQ&A")
     feedback.innerText = "Q&A created"
     setTimeout(() => feedback.innerText = "", 4000)
 
@@ -92,6 +92,39 @@ function addOwnCard() {
         flashCards[category][flashCards[category].length - 1]
     )
     console.table(flashCards[category])
+}
+
+function addCategory() {
+    const newCategory = document.getElementById('newCategory').value
+    
+    flashCards[newCategory] = new Array()
+    flashCards[newCategory].push(
+        {   
+            id: flashCards[newCategory].length,
+            question: 'How to start your new category?',
+            answer: 'Add a new question and answer with the form below!'
+        }
+    )
+    console.log('%cNew flashCard:', 'color: tomato; font-size: medium;', flashCards)
+
+    const categorySelect = document.getElementById('categorySelect')
+    // create the new radio button
+    const radioButton = document.createElement('input')
+    radioButton.type = 'radio'
+    radioButton.name = 'category'
+    radioButton.value = newCategory
+    radioButton.checked = 'checked'
+    // append the radio button to the form
+    categorySelect.appendChild(radioButton)
+    // write the name of the radio button on the screen
+    const textNode = document.createTextNode(newCategory)
+    categorySelect.appendChild(textNode)
+
+    showQuestion()
+
+    const feedback = document.getElementById("feedbackCat")
+    feedback.innerText = "New category created"
+    setTimeout(() => feedback.innerText = "", 4000)
 }
 
 showQuestion()

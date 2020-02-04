@@ -1,9 +1,9 @@
-#addOwnCard {
+.addButton {
   margin: 10px;
   font-weight: bold;
 }
 
-#feedback {
+.feedback {
   color: tomato;
   font-size: large; font-weight: bold;
 }

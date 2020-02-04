@@ -22,14 +22,23 @@
         <button id="nextQuestion" type="default" onclick="showQuestion()">Next question</button>
     </div>
 
-    <div id="creation">
-        <h2>Create you own flashcard!</h2>
+    <div id="createCategory">
+        <h3>Create a new category!</h3>
+        <form>
+            Category: <input id="newCategory" type="text" name="category">
+        </form>
+        <button id="addCategory" class="addButton" type="default" onclick="addCategory()">Create Category</button>
+        <p id="feedbackCat" class="feedback"></p>
+    </div>
+
+    <div id="createCard">
+        <h3>Create you own flashcard!</h3>
         <form>
             Question: <input id="newQuestion" type="text" name="question">
             Answer: <input id="newAnswer" type="text" name="answer">
         </form>
-        <button id="addOwnCard" type="default" onclick="addOwnCard()">Create Q&A</button>
-        <p id="feedback"></p>
+        <button id="addOwnCard" class="addButton" type="default" onclick="addOwnCard()">Create Q&A</button>
+        <p id="feedbackQ&A" class="feedback"></p>
     </div>
 </body>
 
