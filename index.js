@@ -111,6 +111,7 @@ function createCategory(newCategory) {
 
     // create the new radio button
     const radioButton = document.createElement('input')
+    radioButton.classList.add("button")
     radioButton.type = 'radio'
     radioButton.name = 'category'
     radioButton.value = newCategory
