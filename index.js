@@ -114,7 +114,7 @@ function addCategory() {
 
     // if not > create it
     if (!isExist) {
-        flashCards[newCategory] = new Array()
+        flashCards[newCategory] = []
         flashCards[newCategory].push(
             {
                 id: flashCards[newCategory].length,
@@ -138,7 +138,6 @@ function addCategory() {
         select.appendChild(textNode)
 
         showQuestion()
-
         showFeedback(feedback, "New category created")
     } else {
         showFeedback(feedback, "Category already exists")
