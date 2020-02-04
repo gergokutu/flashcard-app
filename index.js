@@ -82,7 +82,7 @@ function addOwnCard() {
         }
     )
         
-    const feedback = document.getElementById("feedback")
+    const feedback = document.getElementById("feedbackQ&A")
     feedback.innerText = "Q&A created"
     setTimeout(() => feedback.innerText = "", 4000)
 
