@@ -1,20 +1,31 @@
 section {
-  margin: 1em 0.5em 0.5em 0em;
+  margin: 1rem 0.5rem 0.5rem 0rem;
+}
+
+span {
+  display: inline-block;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: aqua 1rem double;
 }
 
 #question {
-  font-size: 2em;
+  font-size: 2rem;
   color: blue;
 }
 
 #answer {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: green;
-  margin: 1em 0.5em 0.5em 1em;
+  margin: 1rem 0.5rem 0.5rem 1rem;
+}
+
+#question-list {
+  margin: 1rem;
 }
 
 .button {
-  margin: 1em;
+  margin: 1rem;
   font-weight: bold;
 }
 
