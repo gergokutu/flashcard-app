@@ -111,6 +111,7 @@ function createCategory(newCategory) {
 
     // create the new radio button
     const radioButton = document.createElement('input')
+    radioButton.id = newCategory
     radioButton.classList.add("button")
     radioButton.type = 'radio'
     radioButton.name = 'category'
@@ -156,11 +157,19 @@ function deleteCategory() {
     const feedback = document.getElementById("feedbackCat")
     let newCategory = document.getElementById('newCategory').value
 
-    delete flashCards[newCategory]
-    console.log('%cflashCards:', 'color: tomato; font-size: large;', flashCards)
-    showFeedback(feedback, 'Category deleted')
+    // remove from screen
+    const buttonToRemove = document.getElementById(newCategory)
+    if (buttonToRemove === null) showFeedback(feedback, 'Category does not exist')
+    if (buttonToRemove !== null) {
+        // delet the text node next to the radio button node
+        buttonToRemove.parentElement.removeChild(buttonToRemove.nextSibling)
+        // and delete the button itself
+        buttonToRemove.parentElement.removeChild(buttonToRemove)
+        showFeedback(feedback, 'Category deleted')
+    }
 
-    // form.childNodes > if 1... && if 3... && 
+    // delete the property too
+    delete flashCards[newCategory]
 }
 
 showQuestion()
