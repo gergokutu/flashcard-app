@@ -40,26 +40,10 @@ const flashCards = {
 // returns the value of the checked radio button
 function categorySelect() {
     const categories = document.getElementById('categorySelect').children
-    
+
     for (let i = 0; i < categories.length; i++) {
         if (categories[i].checked) return categories[i].value
     }
-}
-
-function showQuestion() {
-    const category = categorySelect()
-
-    // empty the answer
-    document.getElementById('answer').innerText = null
-
-    // select a random question
-    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
-    const randomCard = flashCards[category][randomNumber]
-    const randomQuestion = randomCard.question
-
-    // random question to the screen
-    const questionSection = document.getElementById('question')
-    questionSection.innerText = randomQuestion
 }
 
 function showAnswer() {
@@ -93,7 +77,23 @@ function addOwnCard() {
 
         console.table(flashCards[category])
         showFeedback(feedback, "Q&A created")
-    }    
+    }
+}
+
+function showQuestion() {
+    const category = categorySelect()
+
+    // empty the answer
+    document.getElementById('answer').innerText = null
+
+    // select a random question
+    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
+    const randomCard = flashCards[category][randomNumber]
+    const randomQuestion = randomCard.question
+
+    // random question to the screen
+    const questionSection = document.getElementById('question')
+    questionSection.innerText = randomQuestion
 }
 
 function createCategory(newCategory) {
@@ -111,6 +111,8 @@ function createCategory(newCategory) {
 
     // create the new radio button
     const radioButton = document.createElement('input')
+    radioButton.id = newCategory
+    radioButton.classList.add("button")
     radioButton.type = 'radio'
     radioButton.name = 'category'
     radioButton.value = newCategory
@@ -132,7 +134,7 @@ function addCategory() {
     let newCategory = document.getElementById('newCategory').value
 
     // check if the category exists?
-    let isExist = false    
+    let isExist = false
     for (const category in flashCards) {
         if (category === newCategory) {
             isExist = true
@@ -148,6 +150,43 @@ function addCategory() {
         showFeedback(feedback, "Ensure a category name!")
     } else {
         showFeedback(feedback, "Category already exists")
+    }
+}
+
+function deleteCategory() {
+    const feedback = document.getElementById("feedbackCat")
+    let newCategory = document.getElementById('newCategory').value
+
+    // remove from screen
+    const buttonToRemove = document.getElementById(newCategory)
+    if (buttonToRemove === null) showFeedback(feedback, 'Category does not exist')
+    if (buttonToRemove !== null) {
+        // delet the text node next to the radio button node
+        buttonToRemove.parentElement.removeChild(buttonToRemove.nextSibling)
+        // and delete the button itself
+        buttonToRemove.parentElement.removeChild(buttonToRemove)
+        showFeedback(feedback, 'Category deleted')
+    }
+
+    // delete the property too
+    delete flashCards[newCategory]
+}
+
+function deleteCard() {
+    const feedback = document.getElementById("feedbackQ&A")
+    const questionToRemove = document.getElementById('newQuestion').value
+    let message = 'Type the exact question to the input field'
+
+    // loop over the categories
+    for (category in flashCards) {
+        flashCards[category].map((card, index) => {
+            if (questionToRemove === card.question) {
+                // delete the proper card from the category array
+                flashCards[category].splice(index, 1)
+                message = 'Card deleted'
+            }
+            showFeedback(feedback, message)
+        })
     }
 }
 
