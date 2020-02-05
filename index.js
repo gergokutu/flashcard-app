@@ -40,26 +40,10 @@ const flashCards = {
 // returns the value of the checked radio button
 function categorySelect() {
     const categories = document.getElementById('categorySelect').children
-    
+
     for (let i = 0; i < categories.length; i++) {
         if (categories[i].checked) return categories[i].value
     }
-}
-
-function showQuestion() {
-    const category = categorySelect()
-
-    // empty the answer
-    document.getElementById('answer').innerText = null
-
-    // select a random question
-    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
-    const randomCard = flashCards[category][randomNumber]
-    const randomQuestion = randomCard.question
-
-    // random question to the screen
-    const questionSection = document.getElementById('question')
-    questionSection.innerText = randomQuestion
 }
 
 function showAnswer() {
@@ -93,7 +77,23 @@ function addOwnCard() {
 
         console.table(flashCards[category])
         showFeedback(feedback, "Q&A created")
-    }    
+    }
+}
+
+function showQuestion() {
+    const category = categorySelect()
+
+    // empty the answer
+    document.getElementById('answer').innerText = null
+
+    // select a random question
+    const randomNumber = Math.floor(Math.random() * flashCards[category].length)
+    const randomCard = flashCards[category][randomNumber]
+    const randomQuestion = randomCard.question
+
+    // random question to the screen
+    const questionSection = document.getElementById('question')
+    questionSection.innerText = randomQuestion
 }
 
 function createCategory(newCategory) {
@@ -134,7 +134,7 @@ function addCategory() {
     let newCategory = document.getElementById('newCategory').value
 
     // check if the category exists?
-    let isExist = false    
+    let isExist = false
     for (const category in flashCards) {
         if (category === newCategory) {
             isExist = true
@@ -170,6 +170,24 @@ function deleteCategory() {
 
     // delete the property too
     delete flashCards[newCategory]
+}
+
+function deleteCard() {
+    const feedback = document.getElementById("feedbackQ&A")
+    const questionToRemove = document.getElementById('newQuestion').value
+    let message = 'Type the exact question to the input field'
+
+    // loop over the categories
+    for (category in flashCards) {
+        flashCards[category].map((card, index) => {
+            if (questionToRemove === card.question) {
+                // delete the proper card from the category array
+                flashCards[category].splice(index, 1)
+                message = 'Card deleted'
+            }
+            showFeedback(feedback, message)
+        })
+    }
 }
 
 showQuestion()
