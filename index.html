@@ -14,8 +14,8 @@
     <div>
         <h3>Choose a category!</h3>
         <form id="categorySelect" onclick="showQuestion()">
-            <input class="button" type="radio" name="category" value="coding" checked> coding
-            <input class="button" type="radio" name="category" value="diving"> diving
+            <input id="coding" class="button" type="radio" name="category" value="coding" checked> coding
+            <input id="diving" class="button" type="radio" name="category" value="diving"> diving
         </form>
     </div>
     
@@ -32,6 +32,7 @@
             Category: <input id="newCategory" type="text" name="category">
         </form>
         <button id="addCategory" class="button" type="default" onclick="addCategory()">Create Category</button>
+        <button id="deleteCategory" class="button" type="default" onclick="deleteCategory()">Delete Category</button>
         <p id="feedbackCat" class="feedback"></p>
     </div>
 
@@ -41,7 +42,8 @@
             Question: <input id="newQuestion" type="text" name="question">
             Answer: <input id="newAnswer" type="text" name="answer">
         </form>
-        <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create Q&A</button>
+        <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create Card</button>
+        <button id="deleteCard" class="button" type="default" onclick="deleteCard()">Delete Card</button>
         <p id="feedbackQ&A" class="feedback"></p>
     </div>
 </body>
