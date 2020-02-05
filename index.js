@@ -152,4 +152,15 @@ function addCategory() {
     }
 }
 
+function deleteCategory() {
+    const feedback = document.getElementById("feedbackCat")
+    let newCategory = document.getElementById('newCategory').value
+
+    delete flashCards[newCategory]
+    console.log('%cflashCards:', 'color: tomato; font-size: large;', flashCards)
+    showFeedback(feedback, 'Category deleted')
+
+    // form.childNodes > if 1... && if 3... && 
+}
+
 showQuestion()
