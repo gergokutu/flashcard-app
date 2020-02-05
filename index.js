@@ -194,15 +194,21 @@ const showList = () => {
     let list = document.getElementById('questions')
     for (category in flashCards) {
         flashCards[category].map((card) => {
-            list.append(`${card.question}`)
-            const br = document.createElement("br")
-            list.appendChild(br)
+            // ver1
+            // list.append(`${card.question}`)
+            // const br = document.createElement("br")
+            // list.appendChild(br)
+            // ver2
+            const listItem = document.createElement('li')
+            listItem.innerText = `${category.toUpperCase()} » ${card.question}`
+            list.appendChild(listItem)
         })
     } 
 }
 
 const hideList = () => {
-    let list = document.getElementById('questions').innerHTML = ''
+    let list = document.getElementById('questions').innerText = ''
+    console.log(list)
 }
 
 showQuestion()
