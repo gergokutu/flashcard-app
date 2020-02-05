@@ -153,7 +153,7 @@ function addCategory() {
     }
 }
 
-function deleteCategory() {
+const deleteCategory = () => {
     const feedback = document.getElementById("feedbackCat")
     let newCategory = document.getElementById('newCategory').value
 
@@ -172,7 +172,7 @@ function deleteCategory() {
     delete flashCards[newCategory]
 }
 
-function deleteCard() {
+const deleteCard = () => {
     const feedback = document.getElementById("feedbackQ&A")
     const questionToRemove = document.getElementById('newQuestion').value
     let message = 'Type the exact question to the input field'
@@ -188,6 +188,21 @@ function deleteCard() {
             showFeedback(feedback, message)
         })
     }
+}
+
+const showList = () => {
+    let list = document.getElementById('questions')
+    for (category in flashCards) {
+        flashCards[category].map((card) => {
+            list.append(`${card.question}`)
+            const br = document.createElement("br")
+            list.appendChild(br)
+        })
+    } 
+}
+
+const hideList = () => {
+    let list = document.getElementById('questions').innerHTML = ''
 }
 
 showQuestion()
