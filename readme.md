@@ -2,6 +2,8 @@
 
 You can test your basic knowledge with the application. By default there are coding and diving Question & Answer card categories but you can create your own as well.
 
+You can try it [here!](https://flashcard-kutu.netlify.com)
+
 ## Technology
 
 * HTML
