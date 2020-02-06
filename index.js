@@ -191,6 +191,7 @@ const deleteCard = () => {
 }
 
 const showList = () => {
+    hideList()
     let list = document.getElementById('questions')
     for (category in flashCards) {
         flashCards[category].map((card) => {
