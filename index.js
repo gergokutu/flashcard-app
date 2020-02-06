@@ -37,11 +37,7 @@ let starterCards = {
         ]
 }
 
-// store data locally
-// localStorage > string key-value pairs
-// workaround > stringify
-// localStorage.setItem('user', JSON.stringify(user))
-// var flashCards = JSON.parse(localStorage.getItem('flashCards'))
+// store data locally > localStorage > string key-value pairs > workaround: stringify
 const setData = (data) => {
     const localStorage = window.localStorage
     localStorage.setItem('flashCards', JSON.stringify(data))
@@ -51,11 +47,6 @@ const getData = () => {
     const localStorage = window.localStorage
     flashCards = JSON.parse(localStorage.getItem('flashCards'))
 }
-
-// localStorage.setItem('item', 'QQQQQQQQQQQQQ')
-// const item = localStorage.getItem('item')
-// localStorage.removeItem('item')
-
 
 // returns the value of the checked radio button
 function categorySelect() {
@@ -221,11 +212,6 @@ const showList = () => {
     let list = document.getElementById('questions')
     for (category in flashCards) {
         flashCards[category].map((card) => {
-            // ver1
-            // list.append(`${card.question}`)
-            // const br = document.createElement("br")
-            // list.appendChild(br)
-            // ver2
             const listItem = document.createElement('li')
             listItem.innerText = `${category.toUpperCase()} » ${card.question}`
             list.appendChild(listItem)
@@ -248,12 +234,15 @@ const showCategories = (flashCards) => {
         radioButton.value = category
         radioButton.checked = 'checked'
         categorySelect.appendChild(radioButton)
+        // textNode after the button
         categorySelect.append(category)
     }
 }
 
+// first app start > fill the local storage
 if (window.localStorage.length === 0) setData(starterCards)
 let flashCards = {}
+// fill flashCards
 getData()
 showCategories(flashCards)
 showQuestion()
