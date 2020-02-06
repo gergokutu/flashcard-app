@@ -1,4 +1,4 @@
-const flashCards = {
+let starterCards = {
     coding:
         [
             {
@@ -36,6 +36,26 @@ const flashCards = {
             }
         ]
 }
+
+// store data locally
+// localStorage > string key-value pairs
+// workaround > stringify
+// localStorage.setItem('user', JSON.stringify(user))
+// var flashCards = JSON.parse(localStorage.getItem('flashCards'))
+const setData = (data) => {
+    const localStorage = window.localStorage
+    localStorage.setItem('flashCards', JSON.stringify(data))
+}
+
+const getData = () => {
+    const localStorage = window.localStorage
+    flashCards = JSON.parse(localStorage.getItem('flashCards'))
+}
+
+// localStorage.setItem('item', 'QQQQQQQQQQQQQ')
+// const item = localStorage.getItem('item')
+// localStorage.removeItem('item')
+
 
 // returns the value of the checked radio button
 function categorySelect() {
@@ -127,6 +147,7 @@ function createCategory(newCategory) {
     select.appendChild(textNode)
 
     showQuestion()
+    setData(flashCards)
 }
 
 function addCategory() {
@@ -170,6 +191,8 @@ const deleteCategory = () => {
 
     // delete the property too
     delete flashCards[newCategory]
+
+    setData(flashCards)
 }
 
 const deleteCard = () => {
@@ -188,6 +211,8 @@ const deleteCard = () => {
             showFeedback(feedback, message)
         })
     }
+
+    setData(flashCards)
 }
 
 const showList = () => {
@@ -204,12 +229,14 @@ const showList = () => {
             listItem.innerText = `${category.toUpperCase()} » ${card.question}`
             list.appendChild(listItem)
         })
-    } 
+    }
 }
 
 const hideList = () => {
     let list = document.getElementById('questions').innerText = ''
-    console.log(list)
 }
 
+if (window.localStorage.length === 0) setData(starterCards)
+let flashCards = {}
+getData()
 showQuestion()
