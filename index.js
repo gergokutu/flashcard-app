@@ -97,6 +97,7 @@ function addOwnCard() {
 
         console.table(flashCards[category])
         showFeedback(feedback, "Q&A created")
+        setData(flashCards)
     }
 }
 
@@ -236,7 +237,23 @@ const hideList = () => {
     let list = document.getElementById('questions').innerText = ''
 }
 
+const showCategories = (flashCards) => {
+    const categorySelect = document.getElementById('categorySelect')
+    for (category in flashCards) {
+        const radioButton = document.createElement('input')
+        radioButton.id = category
+        radioButton.classList.add("button")
+        radioButton.type = 'radio'
+        radioButton.name = 'category'
+        radioButton.value = category
+        radioButton.checked = 'checked'
+        categorySelect.appendChild(radioButton)
+        categorySelect.append(category)
+    }
+}
+
 if (window.localStorage.length === 0) setData(starterCards)
 let flashCards = {}
 getData()
+showCategories(flashCards)
 showQuestion()

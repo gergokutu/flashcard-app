@@ -18,3 +18,4 @@ You can try it [here!](https://flashcard-kutu.netlify.com)
 * create/delete own category
 * create/delete own Q&A cards
 * show/hide all the questions with category name of them
+* saving user data to window.localStorage
