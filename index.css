@@ -4,14 +4,15 @@ section {
 
 span {
   display: inline-block;
-  padding: 1rem;
-  margin: 0.5rem;
-  border: aqua 1rem double;
+  padding: 0.25rem;
+  border: aqua double 0.25rem;
+  margin: 0.25rem
 }
 
-#question {
+#question > li {
   font-size: 2rem;
   color: blue;
+  /* text-align: unset; */
 }
 
 #answer {
@@ -20,9 +21,9 @@ span {
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
-#question-list {
+/* #question-list {
   margin: 1rem;
-}
+} */
 
 .button {
   margin: 1rem;
@@ -32,4 +33,50 @@ span {
 .feedback {
   color: tomato;
   font-size: large; font-weight: bold;
+}
+
+/* define drid areas */
+.header {
+  grid-area: header;
+}
+
+.create-category {
+  grid-area: create-category;
+}
+
+.cards {
+  grid-area: cards;
+}
+
+.list {
+  grid-area: list;
+}
+
+.create-card {
+  grid-area: create-card;
+}
+
+.choose-category {
+  grid-area: choose-category;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 40% 35%;
+  grid-template-rows: 15% 35% 40% 10%;
+  gap: 0.1rem;
+  grid-template-areas:
+    "header header list"
+    "create-category cards list"
+    "create-card choose-category list"
+    "footer footer list";
+}
+
+.grid-container > div {
+  border: 0.25rem solid black;
+  text-align: center;
 }
