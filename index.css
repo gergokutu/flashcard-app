@@ -1,7 +1,3 @@
-/* body {
-
-} */
-
 section {
   margin: 1rem 0.5rem 0.5rem 0rem;
 }
@@ -37,3 +33,59 @@ span {
   color: tomato;
   font-size: large; font-weight: bold;
 }
+
+/* define drid areas */
+.header {
+  grid-area: header;
+}
+
+.create-category {
+  grid-area: create-category;
+}
+
+.cards {
+  grid-area: cards;
+}
+
+.list {
+  grid-area: list;
+}
+
+.create-card {
+  grid-area: create-card;
+}
+
+.choose-category {
+  grid-area: choose-category;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "create-category cards list"
+    "create-card choose-category list"
+    "footer footer footer";
+}
+
+/* .item1 { grid-area: header; }
+.item2 { grid-area: block1; }
+.item3 { grid-area: block2; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "block1 block2"
+    "footer footer";
+}
+
+.grid-container > div {
+  border: 0.5rem black double;
+  text-align: center;
+} */

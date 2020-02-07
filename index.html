@@ -9,51 +9,60 @@
 </head>
 
 <body>
-    <h1>Test yourself!</h1>
+    <div class="grid-container">
+        <div class="header">
+            <h1>Test yourself!</h1>
+        </div>
+        
+        <div class="choose-category">
+            <h3>Choose a category!</h3>
+            <form id="categorySelect" onclick="showQuestion()"></form>
+        </div>
+        
+        <div id="flashCards" class="cards">
+            <section id="question"></section>
+            <section id="answer"></section>
+            <button id="showAnswer" class="button" type="default" onclick="showAnswer()">Show answer</button>
+            <button id="nextQuestion" class="button" type="default" onclick="showQuestion()">Next question</button>
+        </div>
 
-    <div>
-        <h3>Choose a category!</h3>
-        <form id="categorySelect" onclick="showQuestion()">
-            <!-- <input id="coding" class="button" type="radio" name="category" value="coding" checked> coding
-            <input id="diving" class="button" type="radio" name="category" value="diving"> diving -->
-        </form>
-    </div>
-    
-    <div id="flashCards">
-        <section id="question"></section>
-        <section id="answer"></section>
-        <button id="showAnswer" class="button" type="default" onclick="showAnswer()">Show answer</button>
-        <button id="nextQuestion" class="button" type="default" onclick="showQuestion()">Next question</button>
-    </div>
+        <div id="createCategory" class="create-category">
+            <h3>Create a new category!</h3>
+            <form>
+                Category: <input id="newCategory" type="text" name="category">
+            </form>
+            <button id="addCategory" class="button" type="default" onclick="addCategoryToScreen()">Create Category</button>
+            <button id="deleteCategory" class="button" type="default" onclick="deleteCategory()">Delete Category</button>
+            <p id="feedbackCat" class="feedback"></p>
+        </div>
 
-    <div id="createCategory">
-        <h3>Create a new category!</h3>
-        <form>
-            Category: <input id="newCategory" type="text" name="category">
-        </form>
-        <button id="addCategory" class="button" type="default" onclick="addCategoryToScreen()">Create Category</button>
-        <button id="deleteCategory" class="button" type="default" onclick="deleteCategory()">Delete Category</button>
-        <p id="feedbackCat" class="feedback"></p>
-    </div>
+        <div id="createCard" class="create-card">
+            <h3>Create you own flashcard!</h3>
+            <form>
+                Question: <input id="newQuestion" type="text" name="question">
+                Answer: <input id="newAnswer" type="text" name="answer">
+            </form>
+            <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create Card</button>
+            <button id="deleteCard" class="button" type="default" onclick="deleteCard()">Delete Card</button>
+            <p id="feedbackQ&A" class="feedback"></p>
+        </div>
 
-    <div id="createCard">
-        <h3>Create you own flashcard!</h3>
-        <form>
-            Question: <input id="newQuestion" type="text" name="question">
-            Answer: <input id="newAnswer" type="text" name="answer">
-        </form>
-        <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create Card</button>
-        <button id="deleteCard" class="button" type="default" onclick="deleteCard()">Delete Card</button>
-        <p id="feedbackQ&A" class="feedback"></p>
-    </div>
-
-    <div id="question-list">
-        <h3>All the questions:</h3>
-        <ul id="questions"></ul>
-        <div id="list-buttons">
+        <div id="question-list" class="list">
+            <h3>All the questions:</h3>
+            <ul id="questions"></ul>
             <span id="show" onclick="showList()">SHOW</span><span id="hide" onclick="hideList()"">HIDE</span>
         </div>
+
+        <div class="footer">
+            <p>Something will come under the footer secton...</p>
+        </div>
     </div>
+    <!-- <div class="grid-container">
+        <div class="item1">Header</div>
+        <div class="item2">Block1</div>
+        <div class="item3">Block2</div>
+        <div class="item4">Footer</div>
+    </div> -->
 </body>
 
 </html>
