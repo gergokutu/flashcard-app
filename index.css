@@ -66,10 +66,10 @@ span {
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header header header"
+    "header header list"
     "create-category cards list"
     "create-card choose-category list"
-    "footer footer footer";
+    "footer footer list";
 }
 
 /* .item1 { grid-area: header; }
