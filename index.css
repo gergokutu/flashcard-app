@@ -9,10 +9,23 @@ span {
   margin: 0.25rem
 }
 
-#question > li {
-  font-size: 2rem;
-  color: blue;
-  /* text-align: unset; */
+span.feedback {
+  display: block;
+  min-height: 2.57rem;
+  padding: 0.25rem;
+  margin: 0;
+  border: none;
+  color: tomato;
+  font-size: 1.25; font-weight: bold;
+}
+
+li {
+  text-align: start;
+}
+
+.input-text {
+  margin-right: 2rem;
+  text-align: right;
 }
 
 #answer {
@@ -21,18 +34,15 @@ span {
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
-/* #question-list {
-  margin: 1rem;
-} */
+#question {
+  font-size: 1.25rem;
+  color: blue;
+  margin: 1rem 0.5rem 0.5rem 1rem;
+}
 
 .button {
   margin: 1rem;
   font-weight: bold;
-}
-
-.feedback {
-  color: tomato;
-  font-size: large; font-weight: bold;
 }
 
 /* define drid areas */
