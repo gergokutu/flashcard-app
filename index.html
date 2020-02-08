@@ -8,8 +8,8 @@
     <script defer src="index.js"></script>
 </head>
 
-<body>
-    <div class="grid-container">
+<body class="grid-container">
+    <!-- <div class="grid-container"> -->
         <div class="header">
             <h1>Test yourself!</h1>
         </div>
@@ -28,23 +28,23 @@
 
         <div id="createCategory" class="create-category">
             <h3>Create a new category!</h3>
-            <form>
+            <form class="input-text">
                 Category: <input id="newCategory" type="text" name="category">
             </form>
-            <button id="addCategory" class="button" type="default" onclick="addCategoryToScreen()">Create Category</button>
-            <button id="deleteCategory" class="button" type="default" onclick="deleteCategory()">Delete Category</button>
-            <p id="feedbackCat" class="feedback"></p>
+            <button id="addCategory" class="button" type="default" onclick="addCategoryToScreen()">Create</button>
+            <button id="deleteCategory" class="button" type="default" onclick="deleteCategory()">Delete</button>
+            <span id="feedbackCat" class="feedback"></span>
         </div>
 
         <div id="createCard" class="create-card">
             <h3>Create you own flashcard!</h3>
-            <form>
-                Question: <input id="newQuestion" type="text" name="question">
+            <form class="input-text">
+                Question: <input id="newQuestion" type="text" name="question"><br>
                 Answer: <input id="newAnswer" type="text" name="answer">
             </form>
-            <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create Card</button>
-            <button id="deleteCard" class="button" type="default" onclick="deleteCard()">Delete Card</button>
-            <p id="feedbackQ&A" class="feedback"></p>
+            <button id="addOwnCard" class="button" type="default" onclick="addOwnCard()">Create</button>
+            <button id="deleteCard" class="button" type="default" onclick="deleteCard()">Delete</button>
+            <span id="feedbackQ&A" class="feedback"></span>
         </div>
 
         <div id="question-list" class="list">
@@ -56,7 +56,7 @@
         <div class="footer">
             <p>Something will come under the footer secton...</p>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 
 </html>
