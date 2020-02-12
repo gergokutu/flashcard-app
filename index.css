@@ -78,7 +78,9 @@ li {
   /* set the height to fit the page
   A value of 1vh is equal to 1% of the viewport height */
   height: 98vh;
-  grid-template-columns: 25% 40% 35%;
+  min-height: 31rem;
+  min-width: 50rem;
+  grid-template-columns: 25% 50% 25%;
   grid-template-rows: 15% 35% 40% 10%;
   gap: 0.1rem;
   grid-template-areas:
