@@ -1,5 +1,6 @@
 body {
   background-color: rgb(233, 170, 53);
+  color: brown;
 }
 
 section {
@@ -12,6 +13,10 @@ section {
   border: aqua double 0.25rem;
   margin: 0.25rem;
   background-color: white;
+}
+
+#show:hover, #hide:hover {
+  background-color: burlywood;
 }
 
 p.feedback {
@@ -52,6 +57,13 @@ li {
 .button {
   margin: 1rem;
   font-weight: bold;
+  color: rgb(131, 37, 37);
+  border-color: brown;
+  border-radius: 0.5rem;
+}
+
+.button:hover {
+  background-color: burlywood;
 }
 
 /* define drid areas */
@@ -87,13 +99,14 @@ li {
   display: grid;
   /* set the height to fit the page
   A value of 1vh is equal to 1% of the viewport height */
-  height: 97vh;
+  height: 94vh;
   min-height: 38rem;
   min-width: 55rem;
   margin: 0.5rem;
+  margin-right: 1.5rem;
   grid-template-columns: 25% 50% 25%;
   grid-template-rows: 10% 40% 45% 5%;
-  gap: 0.3rem;
+  gap: 0.7rem;
   grid-template-areas:
     "header header list"
     "create-category cards list"
@@ -102,7 +115,9 @@ li {
 }
 
 .grid-container > div {
-  border: 0.25rem solid black;
+  border: 0.25rem solid rgb(124, 86, 17);
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.1rem 0.3rem 0.1rem rgb(109, 71, 0);
   text-align: center;
   background-color: rgb(255, 240, 212);
 }
