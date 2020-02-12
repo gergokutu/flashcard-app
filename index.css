@@ -46,14 +46,14 @@ li {
 
 #answer {
   font-size: 1.5rem;
-  color: rgb(45, 206, 23);
+  color: rgb(173, 228, 191);
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
 #question {
   font-size: 1.5rem;
   font-weight: bold;
-  color: whitesmoke;
+  color: rgb(255, 166, 0);
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
@@ -93,7 +93,7 @@ li {
 
 .cards {
   grid-area: cards;
-  background-image: url(https://cdn2.hubspot.net/hubfs/489418/blog_ask_answer_intro.png);
+  background-image: url(https://www.hackingchinese.com/wp-content/uploads/2019/06/questionmarks.jpg);
   background-size: cover;
   background-position: top;
 }
@@ -103,8 +103,8 @@ li {
   background-image: url(./imgages/question-mark-transparent-background.png);
   background-size: 100rem;
   background-position-y: top;
-  color: rgb(219, 233, 243);
-  background-color: rgb(175, 114, 35) !important;
+  color: rgb(246, 212, 132);
+  background-color: rgb(211, 133, 32) !important;
 }
 
 .create-card {

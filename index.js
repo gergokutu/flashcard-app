@@ -104,7 +104,7 @@ function createCategory(newCategory) {
         {
             id: flashCards[newCategory].length,
             question: 'How to start your new category?',
-            answer: 'Add a new question and answer with the form below!'
+            answer: 'Add a new question and answer with the form!'
         }
     )
     
