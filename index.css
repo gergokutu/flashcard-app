@@ -1,6 +1,6 @@
 body {
   background-color: rgb(233, 170, 53);
-  color: brown;
+  color: rgb(136, 12, 12);
 }
 
 section {
@@ -11,8 +11,10 @@ section {
   display: inline-block;
   padding: 0.25rem;
   border: aqua double 0.25rem;
+  border-radius: 1rem;
   margin: 0.25rem;
-  background-color: white;
+  background-color: rgb(219, 233, 243);
+  color: rgb(136, 12, 12);
 }
 
 #show:hover, #hide:hover {
@@ -25,7 +27,7 @@ p.feedback {
   padding: 0.25rem;
   margin: 0;
   border: none;
-  color: tomato;
+  color: rgb(136, 12, 12);
   font-size: 1.25; font-weight: bold;
 }
 
@@ -44,13 +46,14 @@ li {
 
 #answer {
   font-size: 1.5rem;
-  color: green;
+  color: rgb(173, 228, 191);
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
 #question {
-  font-size: 1.25rem;
-  color: blue;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 166, 0);
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
@@ -62,6 +65,10 @@ li {
   border-radius: 0.5rem;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button:hover {
   background-color: burlywood;
 }
@@ -71,24 +78,49 @@ li {
   grid-area: header;
 }
 
+.header, .footer {
+  background-image: url(https://www.hyms.ac.uk/assets/images/research/mental-health.jpg);
+  color: whitesmoke;
+}
+
 .create-category {
   grid-area: create-category;
+  background-image: url(./imgages/question-mark-transparent-background.png);
+  background-size: cover;
+  background-position: right;
+  color: rgb(136, 12, 12);
 }
 
 .cards {
   grid-area: cards;
+  background-image: url(https://www.hackingchinese.com/wp-content/uploads/2019/06/questionmarks.jpg);
+  background-size: cover;
+  background-position: top;
 }
 
 .list {
   grid-area: list;
+  background-image: url(./imgages/question-mark-transparent-background.png);
+  background-size: 100rem;
+  background-position-y: top;
+  color: rgb(246, 212, 132);
+  background-color: rgb(211, 133, 32) !important;
 }
 
 .create-card {
   grid-area: create-card;
+  background-image: url(https://www.incimages.com/uploaded_files/image/970x450/shutterstock_515321422_353216.jpg);
+  background-size: cover;
+  background-position: right;
+  color: rgb(136, 12, 12);
 }
 
 .choose-category {
   grid-area: choose-category;
+  background-image: url(https://d1ululg65bfe3q.cloudfront.net/images/blog/20151202-ilchi-lee-authentic-living-for-a-solar-body-ask-your-brain-and-it-will-answer.jpg);
+  background-size: cover;
+  background-position: bottom;
+  color: white;
 }
 
 .footer {
