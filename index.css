@@ -1,15 +1,20 @@
+body {
+  background-color: rgb(233, 170, 53);
+}
+
 section {
   margin: 1rem 0.5rem 0.5rem 0rem;
 }
 
-span {
+#show, #hide {
   display: inline-block;
   padding: 0.25rem;
   border: aqua double 0.25rem;
-  margin: 0.25rem
+  margin: 0.25rem;
+  background-color: white;
 }
 
-span.feedback {
+p.feedback {
   display: block;
   min-height: 2.57rem;
   padding: 0.25rem;
@@ -25,6 +30,11 @@ li {
 
 .input-text {
   text-align: center;
+}
+
+#newCategory, #newQuestion, #newAnswer {
+  display: inline-block;
+  margin: 0.25rem;
 }
 
 #answer {
@@ -77,12 +87,13 @@ li {
   display: grid;
   /* set the height to fit the page
   A value of 1vh is equal to 1% of the viewport height */
-  height: 98vh;
-  min-height: 31rem;
-  min-width: 50rem;
+  height: 97vh;
+  min-height: 38rem;
+  min-width: 55rem;
+  margin: 0.5rem;
   grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 15% 35% 40% 10%;
-  gap: 0.1rem;
+  grid-template-rows: 10% 40% 45% 5%;
+  gap: 0.3rem;
   grid-template-areas:
     "header header list"
     "create-category cards list"
@@ -93,4 +104,5 @@ li {
 .grid-container > div {
   border: 0.25rem solid black;
   text-align: center;
+  background-color: rgb(255, 240, 212);
 }
