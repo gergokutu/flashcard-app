@@ -79,7 +79,7 @@ li {
 }
 
 .header, .footer {
-  background-image: url(https://www.hyms.ac.uk/assets/images/research/mental-health.jpg);
+  background-image: url(./imgages/header-footer.jpg);
   color: whitesmoke;
 }
 
@@ -93,7 +93,7 @@ li {
 
 .cards {
   grid-area: cards;
-  background-image: url(https://www.hackingchinese.com/wp-content/uploads/2019/06/questionmarks.jpg);
+  background-image: url(./imgages/card-question.jpg);
   background-size: cover;
   background-position: top;
 }
@@ -109,7 +109,7 @@ li {
 
 .create-card {
   grid-area: create-card;
-  background-image: url(https://www.incimages.com/uploaded_files/image/970x450/shutterstock_515321422_353216.jpg);
+  background-image: url(./imgages/create-card.jpg);
   background-size: cover;
   background-position: right;
   color: rgb(136, 12, 12);
@@ -117,7 +117,7 @@ li {
 
 .choose-category {
   grid-area: choose-category;
-  background-image: url(https://d1ululg65bfe3q.cloudfront.net/images/blog/20151202-ilchi-lee-authentic-living-for-a-solar-body-ask-your-brain-and-it-will-answer.jpg);
+  background-image: url(./imgages/choose-category.jpg);
   background-size: cover;
   background-position: bottom;
   color: white;
