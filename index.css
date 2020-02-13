@@ -107,6 +107,13 @@ li {
   background-color: rgb(211, 133, 32) !important;
 }
 
+#questions {
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 75%;
+  text-align: center;
+}
+
 .create-card {
   grid-area: create-card;
   background-image: url(./imgages/create-card.jpg);
@@ -134,8 +141,6 @@ li {
   height: 98vh;
   min-height: 38rem;
   min-width: 55rem;
-  /* margin: 0.5rem;
-  margin-right: 1.5rem; */
   /* do not have to be 100% */
   grid-template-columns: 25% 50% 22%;
   grid-template-rows: 12% 30% 40% 8%;
@@ -154,4 +159,150 @@ li {
   box-shadow: 0.2rem 0.1rem 0.3rem 0.1rem rgb(70, 45, 0), 0.4rem 0.4rem 0.5rem 0.3rem rgb(109, 71, 0);
   text-align: center;
   background-color: rgb(255, 240, 212);
+}
+
+/* design for smaller screeen (iPad) */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    display: grid;
+    /* set the height to fit the page
+    A value of 1vh is equal to 1% of the viewport height */
+    height: 98vh;
+    min-height: 38rem;
+    min-width: 55rem;
+    /* do not have to be 100% */
+    grid-template-columns: 35% 60%;
+    grid-template-rows: 10% 22% 28% 40% 6%;
+    gap: 1.5rem;
+    grid-template-areas:
+      "header header"
+      "create-category cards"
+      "create-card choose-category"
+      "list footer"
+      "list footer";
+    margin: 1rem;
+  }
+
+  .footer {
+    /* background-image: url(./imgages/header-footer.jpg); */
+    background-size: cover;
+  }
+}
+
+/* design for smaller screeen (iPhone 7 plus) */
+@media screen and (max-width: 414px) {
+  .grid-container {
+    display: grid;
+    /* set the height to fit the page
+    A value of 1vh is equal to 1% of the viewport height */
+    height: 98vh;
+    min-height: 38rem;
+    min-width: 55rem;
+    /* do not have to be 100% */
+    grid-template-columns: 35% 60%;
+    grid-template-rows: 14% 35% 45% 100% 10%;
+    gap: 1.5rem;
+    grid-template-areas:
+      "header header"
+      "create-category cards"
+      "create-card choose-category"
+      "list footer"
+      "list footer";
+    margin: 1rem;
+  }
+
+  .footer {
+    /* background-image: url(./imgages/header-footer.jpg); */
+    background-size: cover;
+  }
+}
+
+/* design for smaller screeen (iPhone 7) */
+@media screen and (max-width: 375px) {
+  .grid-container {
+    display: grid;
+    /* set the height to fit the page
+    A value of 1vh is equal to 1% of the viewport height */
+    height: 98vh;
+    min-height: 38rem;
+    min-width: 55rem;
+    /* do not have to be 100% */
+    grid-template-columns: 35% 60%;
+    grid-template-rows: 14% 35% 45% 122% 10%;
+    gap: 1.5rem;
+    grid-template-areas:
+      "header header"
+      "create-category cards"
+      "create-card choose-category"
+      "list footer"
+      "list footer";
+    margin: 1rem;
+  }
+
+  .footer {
+    /* background-image: url(./imgages/header-footer.jpg); */
+    background-size: cover;
+  }
+}
+
+/* design for smaller screeen (iPhone 5 SE) */
+@media screen and (max-width: 320px) {
+  .grid-container {
+    display: grid;
+    /* set the height to fit the page
+    A value of 1vh is equal to 1% of the viewport height */
+    height: 98vh;
+    min-height: 38rem;
+    min-width: 55rem;
+    /* do not have to be 100% */
+    grid-template-columns: 35% 60%;
+    grid-template-rows: 14% 35% 45% 130% 10%;
+    gap: 1.5rem;
+    grid-template-areas:
+      "header header"
+      "create-category cards"
+      "create-card choose-category"
+      "list footer"
+      "list footer";
+    margin: 1rem;
+  }
+
+  .footer {
+    /* background-image: url(./imgages/header-footer.jpg); */
+    background-size: cover;
+  }
+}
+
+/* design for smaller screeen (iextra small) */
+@media screen and (max-width: 320px) {
+  .grid-container {
+    display: grid;
+    /* set the height to fit the page
+    A value of 1vh is equal to 1% of the viewport height */
+    height: 98vh;
+    min-height: 38rem;
+    min-width: 55rem;
+    /* do not have to be 100% */
+    grid-template-columns: 95%;
+    grid-template-rows: 15% 40% 50% 35% 45% 100% 15%;
+    gap: 1.5rem;
+    grid-template-areas:
+      "header"
+      "cards"
+      "choose-category"
+      "create-category"
+      "create-card"
+      "list"
+      "footer";
+    margin: 1rem;
+  }
+
+  .footer {
+    /* background-image: url(./imgages/header-footer.jpg); */
+    background-size: cover;
+  }
+
+  #questions {
+    width: 35%;
+  }
 }
