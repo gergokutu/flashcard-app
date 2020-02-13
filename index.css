@@ -103,7 +103,7 @@ li {
   background-image: url(./imgages/question-mark-transparent-background.png);
   background-size: 100rem;
   background-position-y: top;
-  color: rgb(246, 212, 132);
+  color: rgb(250, 244, 167);
   background-color: rgb(211, 133, 32) !important;
 }
 
@@ -131,25 +131,27 @@ li {
   display: grid;
   /* set the height to fit the page
   A value of 1vh is equal to 1% of the viewport height */
-  height: 94vh;
+  height: 98vh;
   min-height: 38rem;
   min-width: 55rem;
-  margin: 0.5rem;
-  margin-right: 1.5rem;
-  grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 10% 40% 45% 5%;
-  gap: 0.7rem;
+  /* margin: 0.5rem;
+  margin-right: 1.5rem; */
+  /* do not have to be 100% */
+  grid-template-columns: 25% 50% 22%;
+  grid-template-rows: 12% 30% 40% 8%;
+  gap: 1.5rem;
   grid-template-areas:
     "header header list"
     "create-category cards list"
     "create-card choose-category list"
     "footer footer list";
+  margin: 1rem;
 }
 
 .grid-container > div {
   border: 0.25rem solid rgb(124, 86, 17);
   border-radius: 0.5rem;
-  box-shadow: 0.2rem 0.1rem 0.3rem 0.1rem rgb(109, 71, 0);
+  box-shadow: 0.2rem 0.1rem 0.3rem 0.1rem rgb(70, 45, 0), 0.4rem 0.4rem 0.5rem 0.3rem rgb(109, 71, 0);
   text-align: center;
   background-color: rgb(255, 240, 212);
 }
