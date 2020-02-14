@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(233, 170, 53);
   color: rgb(136, 12, 12);
@@ -12,7 +16,7 @@ section {
   padding: 0.25rem;
   border: aqua double 0.25rem;
   border-radius: 1rem;
-  margin: 0.25rem;
+  margin: 0.5rem;
   background-color: rgb(219, 233, 243);
   color: rgb(136, 12, 12);
 }
@@ -143,7 +147,8 @@ li {
   min-width: 55rem;
   /* do not have to be 100% */
   grid-template-columns: 25% 50% 22%;
-  grid-template-rows: 12% 30% 40% 8%;
+  /* auto > because of growing content */
+  grid-template-rows: 12% 30% 40% auto;
   gap: 1.5rem;
   grid-template-areas:
     "header header list"
@@ -159,6 +164,7 @@ li {
   box-shadow: 0.2rem 0.1rem 0.3rem 0.1rem rgb(70, 45, 0), 0.4rem 0.4rem 0.5rem 0.3rem rgb(109, 71, 0);
   text-align: center;
   background-color: rgb(255, 240, 212);
+  height: auto;
 }
 
 /* design for smaller screeen (iPad) */
@@ -172,7 +178,7 @@ li {
     min-width: 55rem;
     /* do not have to be 100% */
     grid-template-columns: 35% 60%;
-    grid-template-rows: 10% 22% 28% 40% 6%;
+    grid-template-rows: 10% 22% 28% 40% auto;
     gap: 1.5rem;
     grid-template-areas:
       "header header"
@@ -200,7 +206,7 @@ li {
     min-width: 55rem;
     /* do not have to be 100% */
     grid-template-columns: 35% 60%;
-    grid-template-rows: 14% 35% 45% 100% 10%;
+    grid-template-rows: 14% 35% 45% 100% auto;
     gap: 1.5rem;
     grid-template-areas:
       "header header"
@@ -228,7 +234,7 @@ li {
     min-width: 55rem;
     /* do not have to be 100% */
     grid-template-columns: 35% 60%;
-    grid-template-rows: 14% 35% 45% 122% 10%;
+    grid-template-rows: 14% 35% 45% 122% auto;
     gap: 1.5rem;
     grid-template-areas:
       "header header"
@@ -256,7 +262,7 @@ li {
     min-width: 55rem;
     /* do not have to be 100% */
     grid-template-columns: 35% 60%;
-    grid-template-rows: 14% 35% 45% 130% 10%;
+    grid-template-rows: 14% 35% 45% 130% auto;
     gap: 1.5rem;
     grid-template-areas:
       "header header"
@@ -284,7 +290,7 @@ li {
     min-width: 55rem;
     /* do not have to be 100% */
     grid-template-columns: 95%;
-    grid-template-rows: 15% 40% 50% 35% 45% 100% 15%;
+    grid-template-rows: 15% 40% 50% 35% 45% 100% auto;
     gap: 1.5rem;
     grid-template-areas:
       "header"
